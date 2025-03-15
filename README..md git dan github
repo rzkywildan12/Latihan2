@@ -1,0 +1,83 @@
+# Git & GitHub Workflow
+
+Dokumentasi ini berisi langkah-langkah untuk mengelola repository Git dan GitHub sesuai dengan tugas yang diberikan.
+
+## 1. Inisialisasi Repository
+### Langkah-langkah:
+1. Buat folder baru untuk repository:
+   ```sh
+   mkdir my-repo
+   cd my-repo
+   ```
+2. Inisialisasi repository Git:
+   ```sh
+   git init
+   ```
+3. Tambahkan file baru (contoh `index.js` atau `index.ts`):
+   ```sh
+   echo "console.log('Hello, Git!');" > index.js
+   ```
+4. Cek status repository:
+   ```sh
+   git status
+   ```
+
+## 2. Membuat Perubahan dan Push ke GitHub
+### Langkah-langkah:
+1. Tambahkan perubahan ke staging area:
+   ```sh
+   git add .
+   ```
+2. Commit perubahan dengan pesan yang deskriptif:
+   ```sh
+   git commit -m "Menambahkan file index.js"
+   ```
+3. Hubungkan ke repository GitHub (gantilah `your-repo-url` dengan URL repository GitHub-mu):
+   ```sh
+   git remote add origin your-repo-url
+   ```
+4. Push perubahan ke GitHub:
+   ```sh
+   git push -u origin main
+   ```
+
+## 3. Membuat Branch Baru dan Beralih Antar Branch
+### Langkah-langkah:
+1. Buat branch baru:
+   ```sh
+   git branch feature-branch
+   ```
+2. Beralih ke branch baru:
+   ```sh
+   git checkout feature-branch
+   ```
+3. Lakukan perubahan dan commit:
+   ```sh
+   echo "console.log('Hello from feature branch!');" > feature.js
+   git add feature.js
+   git commit -m "Menambahkan fitur baru"
+   ```
+4. Kembali ke branch `main`:
+   ```sh
+   git checkout main
+   ```
+
+## 4. Push Branch Baru ke GitHub
+### Langkah-langkah:
+1. Push branch baru ke GitHub:
+   ```sh
+   git push -u origin feature-branch
+   ```
+
+## 5. Pull Request, Review, dan Merge
+### Langkah-langkah:
+1. Buka repository GitHub-mu dan buat **Pull Request** dari `feature-branch` ke `main`.
+2. Lakukan review kode dan beri komentar jika perlu.
+3. Setelah disetujui, lakukan **Merge Pull Request**.
+4. Sinkronkan branch `main` dengan perintah:
+   ```sh
+   git checkout main
+   git pull origin main
+   ```
+
+---
